@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Prediction Result</title>
+
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+</head>
+
+<body>
+
+<div class="result-container">
+
+<div class="result-card">
+
+<h1>Prediction Result</h1>
+
+{% if "Stay" in prediction %}
+
+<div class="success">
+
+✅
+
+</div>
+
+<h2 style="color:green;">
+{{ prediction }}
+</h2>
+
+<p>
+The customer is expected to continue using the telecom service.
+</p>
+
+{% else %}
+
+<div class="danger">
+
+⚠️
+
+</div>
+
+<h2 style="color:red;">
+{{ prediction }}
+</h2>
+
+<p>
+The customer has a high probability of leaving the telecom company.
+</p>
+
+{% endif %}
+
+<br>
+
+<a href="/predict">
+
+<button class="again-btn">
+Predict Again
+</button>
+
+</a>
+
+<a href="/">
+
+<button class="home-btn">
+Home
+</button>
+
+</a>
+
+</div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Customer Churn Prediction</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body>
+
+<header>
+    <h1>Customer Churn Prediction</h1>
+</header>
+
+<div class="form-container">
+
+    <div class="form-card">
+
+        <h2>Enter Customer Details</h2>
+
+        <form action="/predict" method="POST">
+
+            <div class="form-group">
+                <label>Gender</label>
+                <select name="gender">
+                    <option>Male</option>
+                    <option>Female</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Tenure</label>
+                <input type="number" name="tenure" required>
+            </div>
+
+            <div class="form-group">
+                <label>Monthly Charges</label>
+                <input type="number" step="0.01" name="monthlycharges" required>
+            </div>
+
+            <div class="form-group">
+                <label>Total Charges</label>
+                <input type="number" step="0.01" name="totalcharges" required>
+            </div>
+
+            <div class="form-group">
+                <label>Internet Service</label>
+                <select name="internet">
+                    <option>Fiber</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Online Security</label>
+                <select name="security">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Tech Support</label>
+                <select name="techsupport">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Contract</label>
+                <select name="contract">
+                    <option>Two Year</option>
+                    <option>Month-to-Month</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Paperless Billing</label>
+                <select name="paperless">
+                    <option>Yes</option>
+                    <option>No</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label>Payment Method</label>
+                <select name="payment">
+                    <option>Electronic</option>
+                    <option>Other</option>
+                </select>
+            </div>
+
+            <button type="submit">Predict Customer</button>
+
+        </form>
+
+    </div>
+
+</div>
+
+</body>
+</html>
